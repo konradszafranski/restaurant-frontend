@@ -1,0 +1,47 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	margin: 0px 10px 0px 10px;
+}
+
+.content {
+	display: flex;
+	flex-direction: row;
+	height: 280px;
+	width: 55%;
+	border-style: solid;
+	border-color: #6ddccf;
+	border-radius: 10px;
+	margin-top: 7px;
+}
+
+.basketImg {
+	height: 100%;
+	width: 40%;
+	padding-top: 25px;
+	text-align: center;
+}
+
+.basketDescription {
+	height: 100%;
+	width: 40%;
+	padding-top: 25px;
+	text-align: center;
+}
+
+.basketAmountPrice {
+	height: 100%;
+	width: 40%;
+	padding-top: 25px;
+	text-align: center;
+}
+
+.order {
+	width: 220px;
+	height: 80px;
+	margin-top: 10px;
+	color: Red;
+	border-color: Red;
+	border-radius: 10px;
+	font-size: 30px;
+}

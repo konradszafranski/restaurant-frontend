@@ -1,0 +1,36 @@
+.heading {
+	background-color: #f2610d;
+	height: 70px;
+	padding: 20px;
+	margin: 0px 10px 0px 10px;
+	font-size: 50px;
+	text-align: center;
+}
+
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	height: 30px;
+
+	background-color: #f1f1f1;
+  margin: 0px 10px 0px 10px;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.flex-container > div {
+	width: 50%;
+	text-align: center;
+}
+
+.nav {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+}
+
+.nav > div {
+	width: 33.33%;
+}
