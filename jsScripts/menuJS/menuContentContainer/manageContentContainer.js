@@ -1,26 +1,29 @@
 
 import { build } from "./buildMenuContent.js"
-import { sortDishResultArray } from "./categoryOrder.js"
-import { getMenuContentRequest } from "../requestJS/request.js"
+import { sortDishResultArray } from "../menuSettings/categoryOrder.js"
+import { getMenuContentRequest } from "../../requestJS/request.js"
+import { getDishContentStorage, createDishContentStorage } from "../../storageJS/dishContentStorage.js"
 
 async function initMenuContent() {
 
   let dishArray;
   let mainDivElement = document.querySelector(".main");
-  let localDishContent = JSON.parse(sessionStorage.getItem("menuContent"));
+  let dishContentArray = getDishContentStorage();
 
-  if(localDishContent == null || localDishContent.length == 0) {
-    dishArray = await getContentExternal();
-    sessionStorage.setItem("menuContent", JSON.stringify(dishArray));
-    console.log("external data");
+  console.log("dishContentArray == undefined");
+  console.log(dishContentArray == undefined);
+
+  if(dishContentArray != undefined && dishContentArray.length > 0) {
+    console.log("local data");
+    dishArray = getDishContentStorage();
     console.log(dishArray);
   } else {
-    dishArray = JSON.parse(sessionStorage.getItem("menuContent"));
-    console.log("local data");
+    console.log("external data");
+    dishArray = await getContentExternal();
     console.log(dishArray);
+    createDishContentStorage(dishArray);
   }
-
-  build(mainDivElement, dishArray);
+  mainDivElement.appendChild(build(dishArray));
 }
 
 async function getContentExternal() {

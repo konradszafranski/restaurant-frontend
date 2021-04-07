@@ -1,6 +1,19 @@
+.body {
+	margin: 15px;
+}
+
 .main {
 	display: flex;
+	flex-direction: row;
+
+	/*todo background-image:*/
+}
+
+.dishMainContainer {
+	display: flex;
 	flex-direction: column;
+	width: 80%;
+	order: 1;
 }
 
 .content {
@@ -8,6 +21,21 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	margin: 0px 10px 0px 10px;
+}
+
+.dishBoardContainer {
+	width: 20%;
+	height: 80vh;
+	background-color: Blue;
+	order: 2;
+}
+
+.dishBoardElementsList {
+	height: 80%;
+}
+
+.dishBoardButtonsDiv {
+	height: 20%;
 }
 
 .dish {

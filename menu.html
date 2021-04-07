@@ -14,7 +14,7 @@
       <link rel="stylesheet" href="css/style_menu.css">
   </head>
 
-  <body>
+  <body class="body">
     <div class="heading"> <i> Restauracja </i> </div>
 
     <div class="flex-container">
@@ -35,8 +35,13 @@
     </div>
 
     <script type="module">
-      import { initMenuContent } from "./jsScripts/menuJS/initMenuContent.js";
+      //initialize dish content
+      import { initMenuContent } from "./jsScripts/menuJS/menuContentContainer/manageContentContainer.js";
       document.addEventListener("DOMContentLoaded", initMenuContent);
+
+      //initialize dish board
+      import { initMenuDishBoard } from "./jsScripts/menuJS/menuBoardContainer/manageBoardContainer.js";
+      document.addEventListener("DOMContentLoaded", initMenuDishBoard);
     </script>
   </body>
 

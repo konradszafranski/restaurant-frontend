@@ -1,11 +1,16 @@
 
-import { increaseAmountVal, decreaseAmountVal } from "./menuButtonFunctions.js"
+import { increaseAmountVal, decreaseAmountVal } from "../menuFunctions/menuButtonFunctions.js"
 
-function build(mainElement, dishArray) {
+function build(dishArray) {
 
+  let dishMainContainerDiv;
   let dishContentDiv;
   let iterator = 0;
   let dishCurrentPosition;
+
+  //create container div that contains dishContent and dishCategory divs
+  dishMainContainerDiv = document.createElement("div");
+  dishMainContainerDiv.classList.add("dishMainContainer");
 
   while(iterator < dishArray.length) {
 
@@ -20,8 +25,10 @@ function build(mainElement, dishArray) {
       if(iterator >= dishArray.length) break;
     }
 
-    mainElement.appendChild(dishContentDiv);
+    dishMainContainerDiv.appendChild(dishContentDiv);
   }
+
+  return dishMainContainerDiv;
 }
 
 function buildCategoryElement(categoryName) {
@@ -50,7 +57,7 @@ function buildDishNameElement(name, price) {
   const dishNameElement = document.createElement("div");
   dishNameElement.classList.add("dishName");
   dishNameElement.innerHTML = "<span class='name'>" + name + "</span>" + " " +
-                              "<span class='price'>" + price + "</span>";
+                              "<span class='price'>" + (Math.round(price * 100) / 100).toFixed(2) + "zł" + "</span>";
   return dishNameElement;
 }
 

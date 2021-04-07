@@ -1,13 +1,18 @@
+.body {
+	height: 100vh;
+	margin: 15px;
+}
+
 .main {
 	display: flex;
 	flex-direction: column;
+	height: 75%;
 }
 
 .content {
 	display: flex;
 	flex-direction: row;
-	height: 220px;
-	margin: 0px 10px 0px 10px;
+	height: 33.33%;
 	padding: 10px;
 }
 
